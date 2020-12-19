@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/back"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editBuscar"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margenL"
+            android:layout_marginTop="@dimen/margenXl"
+            android:layout_marginEnd="@dimen/margenL"
+            android:background="@drawable/edit_rounded"
+            android:fontFamily="@font/ubuntu_italic"
+            android:gravity="center"
+            android:hint="¿Donde deseas ir?"
+            android:includeFontPadding="false"
+            android:shadowRadius="100"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/xl"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margenM"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/m"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rounded"
+            android:fontFamily="@font/ubuntu"
+            android:text="Nuevo Destino"
+            android:textSize="@dimen/m" />
+
+        <Button
+            android:id="@+id/btnMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/m"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rounded"
+            android:fontFamily="@font/ubuntu"
+            android:text="Ver Mapa"
+            android:textSize="@dimen/m" />
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvDestinos"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Los destinos mas elegidos:"
+        android:fontFamily="@font/ubuntu_italic"
+        android:textColor="@color/terciario"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ListView
+        android:id="@+id/lvDestinos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

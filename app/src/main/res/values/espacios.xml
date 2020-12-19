@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="xs">4dp</dimen>
+    <dimen name="s">8dp</dimen>
+    <dimen name="m">12dp</dimen>
+    <dimen name="l">16dp</dimen>
+    <dimen name="xl">20dp</dimen>
+
+    <dimen name="margenXs">20dp</dimen>
+    <dimen name="margenS">30dp</dimen>
+    <dimen name="margenM">40dp</dimen>
+    <dimen name="margenL">50dp</dimen>
+    <dimen name="margenXl">60dp</dimen>
+</resources>

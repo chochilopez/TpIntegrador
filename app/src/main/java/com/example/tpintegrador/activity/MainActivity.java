@@ -1,8 +1,10 @@
-package com.example.tpintegrador;
+package com.example.tpintegrador.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tpintegrador.R;
 
 public class MainActivity extends AppCompatActivity {
 
