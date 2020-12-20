@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@color/primario"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
@@ -67,18 +67,23 @@
         android:id="@+id/tvPuntos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Los destinos mas elegidos:"
-        android:fontFamily="@font/ubuntu_italic"
-        android:textColor="@color/terciario"
         android:layout_marginTop="@dimen/l"
         android:layout_marginBottom="@dimen/m"
-        />
+        android:fontFamily="@font/ubuntu_italic"
+        android:text="Los destinos mas elegidos:"
+        android:textColor="@color/terciario" />
 
     <ListView
         android:id="@+id/lvPuntos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="198dp"
         android:divider="@android:color/transparent"
-        android:dividerHeight="10.0sp"/>
+        android:dividerHeight="10.0sp" />
+
+    <ImageView
+        android:id="@+id/imgGlobe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/fondo" />
 
 </LinearLayout>
