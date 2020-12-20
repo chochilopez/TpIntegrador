@@ -41,14 +41,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnNuevo"
+            android:id="@+id/btnBuscarDestino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/m"
             android:layout_weight="1"
             android:background="@drawable/btn_rounded"
             android:fontFamily="@font/ubuntu"
-            android:text="Nuevo Destino"
+            android:text="Buscar Destino"
             android:textSize="@dimen/m" />
 
         <Button
@@ -70,11 +70,15 @@
         android:text="Los destinos mas elegidos:"
         android:fontFamily="@font/ubuntu_italic"
         android:textColor="@color/terciario"
+        android:layout_marginTop="@dimen/l"
+        android:layout_marginBottom="@dimen/m"
         />
 
     <ListView
         android:id="@+id/lvPuntos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"/>
 
 </LinearLayout>

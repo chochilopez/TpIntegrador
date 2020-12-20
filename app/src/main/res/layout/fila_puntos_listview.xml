@@ -7,16 +7,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margenM"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvPunto"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="@dimen/margenL"
             android:layout_weight="1"
-            android:fontFamily="@font/ubuntu_italic"
+            android:fontFamily="@font/ubuntu"
             android:text="Punto"
             android:textColor="@color/terciario"
             android:textSize="@dimen/l" />
@@ -24,12 +24,11 @@
         <Button
             android:id="@+id/btnListaPunto"
             android:layout_width="wrap_content"
-            android:background="@color/rojo"
-            android:fontFamily="@font/ubuntu"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_weight="1"
+            android:layout_height="30dp"
             android:layout_marginEnd="@dimen/margenL"
-            android:text="Visitar" />
+            android:textSize="@dimen/m"
+            android:background="@drawable/btn_rojo_rounded"
+            android:text="Ir" />
+
     </LinearLayout>
 </LinearLayout>

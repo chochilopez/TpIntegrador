@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lvPuntos=findViewById(R.id.lvPuntos);
-        DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(MainActivity.super.getApplicationContext()));
+        //DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(MainActivity.super.getApplicationContext()));
 
         ArrayAdapter<Punto> adapter= new ListViewPuntoAdapter(this, AppDatabase.getAppDatabase(this).puntoDao().getAll(),this);
         lvPuntos.setAdapter(adapter);
