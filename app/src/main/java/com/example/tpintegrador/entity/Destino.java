@@ -1,30 +1,39 @@
 package com.example.tpintegrador.entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "destino")
 public class  Destino{
     @PrimaryKey(autoGenerate = true)
     private Integer id;
+
     @ColumnInfo(defaultValue = "")
     private String nombre;
+
     @ColumnInfo(defaultValue = "")
     private String descripcion;
-    @ColumnInfo(name = "0.0")
+
+    @ColumnInfo(name = "precio_dia", defaultValue = "0.0")
     private Double precioDia;
-    @ColumnInfo(defaultValue = "false")
+
+    @ColumnInfo(name="internet", defaultValue = "false")
     private Boolean poseeInternet;
-    @ColumnInfo(defaultValue = "NO_INFORMA")
-    private TipoAlojamiento tipoPropiedad;
-    @ColumnInfo(defaultValue = "0")
+
+    @ColumnInfo(name="tipo", defaultValue = "NO_INFORMA")
+    private String tipoPropiedad;
+
+    @ColumnInfo(name="capacidad", defaultValue = "0")
     private Integer capacidadPersonas;
+
+    @Ignore
     private Punto punto;
 
     public Destino() {
     }
 
-    public Destino(String nombre, String descripcion, Double precioDia, Boolean poseeInternet, TipoAlojamiento tipoPropiedad, Integer capacidadPersonas, Punto punto) {
+    public Destino(String nombre, String descripcion, Double precioDia, Boolean poseeInternet, String tipoPropiedad, Integer capacidadPersonas, Punto punto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precioDia = precioDia;
@@ -74,11 +83,11 @@ public class  Destino{
         this.poseeInternet = poseeInternet;
     }
 
-    public TipoAlojamiento getTipoPropiedad() {
+    public String getTipoPropiedad() {
         return tipoPropiedad;
     }
 
-    public void setTipoPropiedad(TipoAlojamiento tipoPropiedad) {
+    public void setTipoPropiedad(String tipoPropiedad) {
         this.tipoPropiedad = tipoPropiedad;
     }
 

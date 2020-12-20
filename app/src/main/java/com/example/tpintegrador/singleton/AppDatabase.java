@@ -6,6 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.tpintegrador.dao.DestinoDao;
 import com.example.tpintegrador.dao.PuntoDao;
 import com.example.tpintegrador.entity.Destino;
 import com.example.tpintegrador.entity.Punto;
@@ -15,6 +16,10 @@ import com.example.tpintegrador.entity.Punto;
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
+
+    public abstract PuntoDao puntoDao();
+    public abstract DestinoDao destinoDao();
+
 
     public static AppDatabase getAppDatabase(Context context){
         if (INSTANCE==null)

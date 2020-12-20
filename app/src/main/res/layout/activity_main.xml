@@ -64,7 +64,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvDestinos"
+        android:id="@+id/tvPuntos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Los destinos mas elegidos:"
@@ -73,7 +73,7 @@
         />
 
     <ListView
-        android:id="@+id/lvDestinos"
+        android:id="@+id/lvPuntos"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -1,21 +1,39 @@
 package com.example.tpintegrador.dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
+
+import com.example.tpintegrador.entity.Destino;
+
+import java.util.List;
 
 @Dao
-public class DestinoDao {
-    @Query("select * from tarea")
-    List<Tarea> getAll();
+public interface DestinoDao {
+    @Query("select * from destino")
+    List<Destino> getAll();
 
-    @Query("select * from tarea where duracion > :inicio AND duracion < :fin")
-    Tarea findByDuracion(Integer inicio, Integer fin);
+    @Query("select * from destino where nombre like :nombre")
+    List<Destino> findByNombre(String nombre);
+
+    @Query("select * from destino where precio_dia between :min and :max")
+    List<Destino> findByPrecio(Double min, Double max);
+
+    @Query("select * from destino where tipo like :tipo")
+    List<Destino> findByTipo(String tipo);
+
+    @Query("select * from destino where capacidad >= :capacidad")
+    List<Destino> findByCapacidad(Integer capacidad);
 
     @Insert
-    void insertAll(Tarea... tareas);
+    void insertAll(Destino... destinos);
 
     @Update
-    void update(Tarea tarea);
+    void update(Destino destino);
 
     @Delete
-    void delete(Tarea tarea);
+    void delete(Destino destino);
 }
+

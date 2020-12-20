@@ -5,6 +5,8 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import java.util.List;
+
 @Entity(tableName = "punto", indices = {@Index(value = {"latitud", "longitud"}, unique = true)})
 public class Punto {
     @PrimaryKey(autoGenerate = true)
@@ -21,10 +23,9 @@ public class Punto {
     public Punto() {
     }
 
-    public Punto(Double latitud, Double longitud, Double altura, String nombre) {
+    public Punto(Double latitud, Double longitud, String nombre) {
         this.latitud = latitud;
         this.longitud = longitud;
-        this.altura = altura;
         this.nombre=nombre;
     }
 
