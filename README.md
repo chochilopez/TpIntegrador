@@ -15,7 +15,7 @@ Persistencia con Room
 
 ```
 
-### Instalación 🔧
+### Herramientas 🔧
 
 _Realizado en android studio_
 
