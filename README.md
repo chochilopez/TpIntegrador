@@ -16,15 +16,14 @@ Persistencia con Room
 ```
 
 ### Herramientas 🔧
-...
 
 _Realizado en android studio_
 
 _JDK 11_
 
+
+
 ### Autor ✒️
-...
 
  **Gastón López** lopezwgaston@gmail.com
-
 ```
