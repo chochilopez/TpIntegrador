@@ -3,13 +3,14 @@
 _Trabajo final integrador para la materia DAM2020, UTN FRSF._
 
 
-### Pre-requisitos 📋
+### Descripcion 📋
 
 _Aplicacion de busqueda de destinos turisticos, basados en su geolocalizacion_
 
 ```
 Abm Destino y Punto
 Busquedas por diferentes parametros
+ListView, Recycler, Adapters, Spinners, mapas, Intents, permisos, etc
 Persistencia con Room
 
 ```
