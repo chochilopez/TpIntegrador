@@ -51,6 +51,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         }
         if (granted){
             map = googleMap;
+            //FIXME soluicionar permisos
             //map.setMyLocationEnabled(true);
             LatLng utn=new LatLng(-31.616470, -60.675239);
             CameraPosition cp=new CameraPosition.Builder().target(utn).bearing(0).tilt(10).zoom(5).build();
