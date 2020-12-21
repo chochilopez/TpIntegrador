@@ -1,0 +1,27 @@
+# GLOBE
+
+_Trabajo final integrador para la materia DAM2020, UTN FRSF._
+
+
+### Pre-requisitos 📋
+
+_Aplicacion de busqueda de destinos turisticos, basados en su geolocalizacion_
+
+```
+Abm Destino y Punto
+Busquedas por diferentes parametros
+Persistencia con Room
+
+```
+
+### Instalación 🔧
+
+_Realizado en android studio_
+
+_JDK 11_
+
+```
+
+## Autor ✒️
+
+* **Gastón López** [chochilopez](lopezwgaston@gmail.com)
