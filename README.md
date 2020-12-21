@@ -22,9 +22,9 @@ _Realizado en android studio_
 
 _JDK 11_
 
-```
-
 ### Autor ✒️
-....
-  **Gastón López** lopezwgaston@gmail.com
 ...
+
+ **Gastón López** lopezwgaston@gmail.com
+
+```
