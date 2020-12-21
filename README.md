@@ -24,5 +24,5 @@ _JDK 11_
 ```
 
 ## Autor ✒️
-
-* **Gastón López** [chochilopez](lopezwgaston@gmail.com)
+....
+  **Gastón López** lopezwgaston@gmail.com
