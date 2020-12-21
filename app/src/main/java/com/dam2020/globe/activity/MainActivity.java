@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.dam2020.globe.R;
 import com.dam2020.globe.adapter.ListViewPuntoAdapter;
 import com.dam2020.globe.entity.Punto;
+import com.dam2020.globe.helper.DatabaseInitializer;
 import com.dam2020.globe.singleton.AppDatabase;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         lvPuntos=findViewById(R.id.lvPuntos);
         btnMapa=findViewById(R.id.btnMapa);
         btnBuscarDestino=findViewById(R.id.btnBuscarDestino);
-        //DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(MainActivity.super.getApplicationContext()));
+        DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(MainActivity.super.getApplicationContext()));
 
         ArrayAdapter<Punto> adapter= new ListViewPuntoAdapter(this, AppDatabase.getAppDatabase(this).puntoDao().getAll(),this);
         lvPuntos.setAdapter(adapter);

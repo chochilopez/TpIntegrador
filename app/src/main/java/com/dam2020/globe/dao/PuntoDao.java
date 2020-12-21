@@ -7,17 +7,12 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 
-import com.dam2020.globe.entity.DestinosEnPuntos;
 import com.dam2020.globe.entity.Punto;
 
 import java.util.List;
 
 @Dao
 public interface PuntoDao {
-    @Transaction
-    @Query("SELECT * FROM destino")
-    public List<DestinosEnPuntos> getDestinosEnPuntos();
-
     @Query("select * from punto")
     List<Punto> getAll();
 
@@ -35,6 +30,9 @@ public interface PuntoDao {
 
     @Insert
     void insertAll(Punto... puntos);
+
+    @Insert
+    Long insert(Punto punto);
 
     @Update
     void update(Punto punto);

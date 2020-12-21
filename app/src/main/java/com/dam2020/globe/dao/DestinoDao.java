@@ -4,14 +4,20 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 
 import com.dam2020.globe.entity.Destino;
+import com.dam2020.globe.entity.DestinoPunto;
 
 import java.util.List;
 
 @Dao
 public interface DestinoDao {
+    @Transaction
+    @Query("SELECT * FROM destino")
+    public List<DestinoPunto> getDestinosPuntos();
+
     @Query("select * from destino")
     List<Destino> getAll();
 
@@ -29,6 +35,9 @@ public interface DestinoDao {
 
     @Insert
     void insertAll(Destino... destinos);
+
+    @Insert
+    Long insert(Destino destino);
 
     @Update
     void update(Destino destino);

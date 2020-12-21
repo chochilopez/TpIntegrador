@@ -24,13 +24,12 @@ public class DatabaseInitializer {
         populateWithTestData(db);
     }
 
-    private static Punto addPunto(final AppDatabase db, Punto punto) {
-        db.puntoDao().insertAll(punto);
-        return punto;
+    private static Long addPunto(final AppDatabase db, Punto punto) {
+        return db.puntoDao().insert(punto);
     }
 
     private static Destino addDestino(final AppDatabase db, Destino destino) {
-        db.destinoDao().insertAll(destino);
+        db.destinoDao().insert(destino);
         return destino;
     }
 
@@ -42,9 +41,9 @@ public class DatabaseInitializer {
         //String nombre, String descripcion, Double precioDia, Boolean poseeInternet, TipoAlojamiento tipoPropiedad, Integer capacidadPersonas, Punto punto
         //HABITACION_HOTEL,CASA,DEPARTAMENTO,HOSTEL, CABAÑA, NO_INFORMA
         addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-                TipoAlojamiento.CABAÑA.toString(), 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
+                TipoAlojamiento.CABAÑA.toString(), 6,addPunto(db, new Punto(-32.087373, -64.797747, "Calamuchita"))));
         addDestino(db, new Destino("Hotel Champaqui", "Un hotel 5 estrellas arriba del cerro" , 10567.65, true,
-                TipoAlojamiento.HABITACION_HOTEL.toString(), 3, addPunto(db, new Punto(-31.989575, -64.934300, "Calamuchita"))));
+                TipoAlojamiento.HABITACION_HOTEL.toString(), 3, addPunto(db, new Punto(-31.989878, -64.9345763, "Calamuchita"))));
         addDestino(db, new Destino("La casa de Vazquez", "La casa del jefe del faro" , 543.00, true,
                 TipoAlojamiento.CASA.toString(), 6, addPunto(db, new Punto(-54.732778, -63.857830, "Isla de los Estados"))));
         addDestino(db, new Destino("El Vigilante", "Un edificio en un lugar raro" , 0.15, true,

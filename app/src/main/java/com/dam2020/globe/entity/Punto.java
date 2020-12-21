@@ -5,42 +5,32 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "punto", indices = {@Index(value = {"latitud", "longitud"}, unique = true)})
+@Entity(tableName = "punto", indices = {@Index(value = {"latitud", "longitud"})})
 public class Punto {
     @PrimaryKey(autoGenerate = true)
-    private Integer id;
+    private Long id_punto;
     @ColumnInfo(defaultValue = "")
     private String nombre;
     @ColumnInfo(defaultValue = "0.0")
     private Double latitud;
     @ColumnInfo(defaultValue = "0.0")
     private Double longitud;
-    @ColumnInfo(defaultValue = "0.0")
-    private Double altura;
 
     public Punto() {
     }
 
     public Punto(Double latitud, Double longitud, String nombre) {
+        this.nombre = nombre;
         this.latitud = latitud;
         this.longitud = longitud;
-        this.nombre=nombre;
     }
 
-    public Double getLatitud() {
-        return latitud;
+    public Long getId_punto() {
+        return id_punto;
     }
 
-    public void setLatitud(Double latitud) {
-        this.latitud = latitud;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId_punto(Long id_punto) {
+        this.id_punto = id_punto;
     }
 
     public String getNombre() {
@@ -51,6 +41,14 @@ public class Punto {
         this.nombre = nombre;
     }
 
+    public Double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
+    }
+
     public Double getLongitud() {
         return longitud;
     }
@@ -59,20 +57,13 @@ public class Punto {
         this.longitud = longitud;
     }
 
-    public Double getAltura() {
-        return altura;
-    }
-
-    public void setAltura(Double altura) {
-        this.altura = altura;
-    }
-
     @Override
     public String toString() {
         return "Punto{" +
-                "latitud=" + latitud +
+                "id_punto=" + id_punto +
+                ", nombre='" + nombre + '\'' +
+                ", latitud=" + latitud +
                 ", longitud=" + longitud +
-                ", altura=" + altura +
                 '}';
     }
 }

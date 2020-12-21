@@ -1,5 +1,6 @@
 package com.dam2020.globe.entity;
 import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -7,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "destino")
 public class  Destino{
     @PrimaryKey(autoGenerate = true)
-    private Integer id;
+    private Long id_destino;
 
     @ColumnInfo(defaultValue = "")
     private String nombre;
@@ -27,28 +28,27 @@ public class  Destino{
     @ColumnInfo(name="capacidad", defaultValue = "0")
     private Integer capacidadPersonas;
 
-    @Ignore
-    private Punto punto;
+    private Long id_punto;
 
     public Destino() {
     }
 
-    public Destino(String nombre, String descripcion, Double precioDia, Boolean poseeInternet, String tipoPropiedad, Integer capacidadPersonas, Punto punto) {
+    public Destino(String nombre, String descripcion, Double precioDia, Boolean poseeInternet, String tipoPropiedad, Integer capacidadPersonas, Long id_punto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precioDia = precioDia;
         this.poseeInternet = poseeInternet;
         this.tipoPropiedad = tipoPropiedad;
         this.capacidadPersonas = capacidadPersonas;
-        this.punto = punto;
+        this.id_punto = id_punto;
     }
 
-    public Integer getId() {
-        return id;
+    public Long getId_destino() {
+        return id_destino;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId_destino(Long id_destino) {
+        this.id_destino = id_destino;
     }
 
     public String getNombre() {
@@ -99,25 +99,25 @@ public class  Destino{
         this.capacidadPersonas = capacidadPersonas;
     }
 
-    public Punto getPunto() {
-        return punto;
+    public Long getId_punto() {
+        return id_punto;
     }
 
-    public void setPunto(Punto punto) {
-        this.punto = punto;
+    public void setId_punto(Long id_punto) {
+        this.id_punto = id_punto;
     }
 
     @Override
     public String toString() {
         return "Destino{" +
-                "id=" + id +
+                "id_destino=" + id_destino +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", precioDia=" + precioDia +
                 ", poseeInternet=" + poseeInternet +
-                ", tipoPropiedad=" + tipoPropiedad +
+                ", tipoPropiedad='" + tipoPropiedad + '\'' +
                 ", capacidadPersonas=" + capacidadPersonas +
-                ", punto=" + punto +
+                ", id_punto=" + id_punto +
                 '}';
     }
 }
