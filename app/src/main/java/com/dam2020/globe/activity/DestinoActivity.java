@@ -94,13 +94,13 @@ public class DestinoActivity extends AppCompatActivity {
                         personas=4;
                         break;
                     case 4:
-                        personas=5;
+                        personas=10;
                         break;
                 }
                 String tipo="";
                 switch (comboTipoHabitacion.getSelectedItemPosition()){
                     case 0:
-                        tipo="";
+                        tipo="%";
                         break;
                     case 1:
                         tipo="HABITACION_HOTEL";
@@ -125,7 +125,7 @@ public class DestinoActivity extends AppCompatActivity {
                 mAdapter=new RecyclerDestinoAdapter(
                         AppDatabase.getAppDatabase(
                                 recyclerView.getContext()).destinoDao().findByAll(
-                                        editNombre.getText().toString(),
+                                        editNombre.getText().toString().isEmpty() ? "%" : editNombre.getText().toString(),
                                         cbInternet.isChecked() ? 1 : 0,
                                         (double)seekPrecio.getProgress(),
                                         personas,

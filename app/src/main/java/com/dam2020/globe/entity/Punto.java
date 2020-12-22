@@ -7,22 +7,25 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "punto", indices = {@Index(value = {"latitud", "longitud"})})
 public class Punto {
+
     @PrimaryKey(autoGenerate = true)
     private Long id_punto;
-    @ColumnInfo(defaultValue = "")
-    private String nombre;
+
     @ColumnInfo(defaultValue = "0.0")
     private Double latitud;
+
     @ColumnInfo(defaultValue = "0.0")
     private Double longitud;
+
+    private Long id_pais;
 
     public Punto() {
     }
 
-    public Punto(Double latitud, Double longitud, String nombre) {
-        this.nombre = nombre;
+    public Punto(Double latitud, Double longitud, Long id_pais) {
         this.latitud = latitud;
         this.longitud = longitud;
+        this.id_pais=id_pais;
     }
 
     public Long getId_punto() {
@@ -33,12 +36,12 @@ public class Punto {
         this.id_punto = id_punto;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Long getId_pais() {
+        return id_pais;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setId_pais(Long id_pais) {
+        this.id_pais = id_pais;
     }
 
     public Double getLatitud() {
@@ -61,7 +64,6 @@ public class Punto {
     public String toString() {
         return "Punto{" +
                 "id_punto=" + id_punto +
-                ", nombre='" + nombre + '\'' +
                 ", latitud=" + latitud +
                 ", longitud=" + longitud +
                 '}';

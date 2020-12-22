@@ -16,6 +16,9 @@ import com.dam2020.globe.entity.Punto;
 import com.dam2020.globe.helper.DatabaseInitializer;
 import com.dam2020.globe.singleton.AppDatabase;
 
+import java.util.Collections;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnMapa, btnBuscarDestino;
@@ -32,7 +35,15 @@ public class MainActivity extends AppCompatActivity {
         btnBuscarDestino=findViewById(R.id.btnBuscarDestino);
         //DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(MainActivity.super.getApplicationContext()));
 
-        ArrayAdapter<Punto> adapter= new ListViewPuntoAdapter(this, AppDatabase.getAppDatabase(this).puntoDao().getAll(),this);
+        List<Destino>=AppDatabase.getAppDatabase(this).puntoDao().getAll();
+        Collections.sort(personas, new Comparator() {
+            @Override
+            public int compare(Persona p1, Persona p2) {
+                return new Integer(p1.getEdad()).compareTo(new Integer(p2.getEdad()));
+            }
+        });
+
+        ArrayAdapter<Punto> adapter= new ListViewPuntoAdapter(this, ,this);
         lvPuntos.setAdapter(adapter);
 
         btnMapa.setOnClickListener(new View.OnClickListener() {

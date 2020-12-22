@@ -48,7 +48,7 @@ public class ListViewPuntoAdapter extends ArrayAdapter<Punto> {
         }
         // configurar cada view con que fila del arreglo de datos coincide.
         puntoHolder.btnListaPunto.setTag(position);
-        puntoHolder.tvPunto.setText(punto.getNombre());
+        puntoHolder.tvPunto.setText(punto.getId_pais().toString());
 
         return vistaAux;
     }

@@ -7,17 +7,20 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.dam2020.globe.dao.DestinoDao;
+import com.dam2020.globe.dao.PaisDao;
 import com.dam2020.globe.dao.PuntoDao;
 import com.dam2020.globe.entity.Destino;
+import com.dam2020.globe.entity.Pais;
 import com.dam2020.globe.entity.Punto;
 
 //Singleton conexion a DB
-@Database(entities = {Destino.class, Punto.class}, version = 1)
+@Database(entities = {Destino.class, Punto.class, Pais.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static com.dam2020.globe.singleton.AppDatabase INSTANCE;
 
     public abstract PuntoDao puntoDao();
+    public abstract PaisDao paisDao();
     public abstract DestinoDao destinoDao();
 
 

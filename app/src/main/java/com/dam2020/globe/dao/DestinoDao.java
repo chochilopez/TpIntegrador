@@ -15,30 +15,29 @@ import java.util.List;
 @Dao
 public interface DestinoDao {
     @Transaction
-    @Query("SELECT * FROM destino")
+    @Query("SELECT * FROM Destino")
     public List<DestinoPunto> getDestinosPuntos();
 
-    @Query("select * from destino")
+    @Query("select * from Destino")
     List<Destino> getAll();
 
-    @Query("select * from destino where nombre like :nombre")
+    @Query("select * from Destino d where d.nombre like :nombre")
     List<Destino> findByNombre(String nombre);
 
-    @Query("select * from destino where nombre like :nombre AND " +
-            "internet=:internet AND " +
-            "precio_dia BETWEEN 0 AND :precio AND " +
-            "tipo like :tipo AND " +
-            "capacidad=:personas")
+    @Query("select * from Destino d where d.nombre like :nombre AND " +
+            "d.internet=:internet AND " +
+            "d.precio_dia BETWEEN 0 AND :precio AND " +
+            "d.tipo like :tipo AND " +
+            "d.capacidad BETWEEN 1 AND :personas ")
     List<Destino> findByAll(String nombre, Integer internet, Double precio, Integer personas, String tipo);
 
-
-    @Query("select * from destino where precio_dia between :min and :max")
+    @Query("select * from Destino d where d.precio_dia between :min and :max")
     List<Destino> findByPrecio(Double min, Double max);
 
-    @Query("select * from destino where tipo like :tipo")
+    @Query("select * from Destino d where d.tipo like :tipo")
     List<Destino> findByTipo(String tipo);
 
-    @Query("select * from destino where capacidad >= :capacidad")
+    @Query("select * from Destino d where d.capacidad >= :capacidad")
     List<Destino> findByCapacidad(Integer capacidad);
 
     @Insert

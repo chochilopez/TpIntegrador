@@ -13,20 +13,8 @@ import java.util.List;
 
 @Dao
 public interface PuntoDao {
-    @Query("select * from punto")
+    @Query("select * from Punto")
     List<Punto> getAll();
-
-    @Query("select * from punto where nombre like :nombre")
-    List<Punto> findByNombre(String nombre);
-
-    @Query("select * from destino where precio_dia between :min and :max")
-    List<Punto> findByLongitud(Double min, Double max);
-
-    @Query("select * from destino where tipo like :tipo")
-    List<Punto> findByLatitud(String tipo);
-
-    @Query("select * from destino where capacidad >= :capacidad")
-    List<Punto> findByLatLong(Integer capacidad);
 
     @Insert
     void insertAll(Punto... puntos);

@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "destino")
 public class  Destino{
+
     @PrimaryKey(autoGenerate = true)
     private Long id_destino;
 
@@ -19,9 +20,6 @@ public class  Destino{
     @ColumnInfo(name = "precio_dia", defaultValue = "0.0")
     private Double precioDia;
 
-    @ColumnInfo(defaultValue = "5")
-    private Integer popularidad;
-
     @ColumnInfo(defaultValue = "0")
     private Integer internet;
 
@@ -31,12 +29,15 @@ public class  Destino{
     @ColumnInfo(name="capacidad", defaultValue = "0")
     private Integer capacidadPersonas;
 
+    @ColumnInfo(defaultValue = "0")
+    private Integer reservas;
+
     private Long id_punto;
 
     public Destino() {
     }
 
-    public Destino(String nombre, String descripcion, Double precioDia, Integer poseeInternet, String tipoPropiedad, Integer capacidadPersonas, Long id_punto, Integer popularidad) {
+    public Destino(String nombre, String descripcion, Double precioDia, Integer poseeInternet, String tipoPropiedad, Integer capacidadPersonas, Long id_punto, Integer reservas) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precioDia = precioDia;
@@ -44,7 +45,7 @@ public class  Destino{
         this.tipoPropiedad = tipoPropiedad;
         this.capacidadPersonas = capacidadPersonas;
         this.id_punto = id_punto;
-        this.popularidad=popularidad;
+        this.reservas=reservas;
     }
 
     public Long getId_destino() {
@@ -55,12 +56,12 @@ public class  Destino{
         this.id_destino = id_destino;
     }
 
-    public Integer getPopularidad() {
-        return popularidad;
+    public Integer getReservas() {
+        return reservas;
     }
 
-    public void setPopularidad(Integer popularidad) {
-        this.popularidad = popularidad;
+    public void setReservas(Integer reservas) {
+        this.reservas = reservas;
     }
 
     public String getNombre() {

@@ -1,34 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dos"
+    android:layout_marginBottom="@dimen/l"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDisco"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        card_view:cardBackgroundColor="@color/cinco"
+        card_view:cardElevation="5dp">
 
-        <TextView
-            android:id="@+id/tvDestino"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/margenL"
-            android:layout_weight="1"
-            android:fontFamily="@font/ubuntu"
-            android:text="Punto"
-            android:textColor="@color/tres"
-            android:textSize="@dimen/l" />
+            android:background="#789BB1"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnIrDestino"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginEnd="@dimen/margenL"
-            android:textSize="@dimen/m"
-            android:background="@drawable/btn_rojo_rounded"
-            android:text="Ir" />
+            <TextView
+                android:id="@+id/tvPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginTop="@dimen/m"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Precio: "
+                android:textColor="@color/tres" />
 
-    </LinearLayout>
+            <ProgressBar
+                android:id="@+id/pbPrecio"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginEnd="@dimen/m"
+                android:layout_height="wrap_content"
+                android:max="20000"
+                android:min="0"
+                android:progressTint="@color/cinco"></ProgressBar>
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginTop="@dimen/xs"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="tvNombre"
+                android:textSize="22dp"></TextView>
+
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginTop="@dimen/xs"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:text="tvDescripcion"
+                android:textColor="@color/design_default_color_secondary"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/tvCapacidad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginTop="@dimen/xs"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_bold_italic"
+                android:text="Capcidad"
+                android:textColor="@color/uno"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tvTipo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginTop="@dimen/xs"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_bold_italic"
+                android:text="Tipo"
+                android:textColor="@color/uno"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tvInternet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginTop="@dimen/xs"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_bold_italic"
+                android:text="Internet"
+                android:textColor="@color/uno"
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/m"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnVerEnMapa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/m"
+                    android:layout_marginEnd="@dimen/xs"
+                    android:layout_marginTop="@dimen/xs"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_rounded"
+                    android:fontFamily="@font/ubuntu"
+                    android:textColor="@color/uno"
+                    android:text="VER EN MAPA"
+                    android:textSize="@dimen/m" />
+
+                <Button
+                    android:id="@+id/btnReservar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/xs"
+                    android:layout_marginEnd="@dimen/m"
+                    android:layout_marginTop="@dimen/xs"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_rounded"
+                    android:fontFamily="@font/ubuntu"
+                    android:textColor="@color/uno"
+                    android:text="RESERVAR"
+                    android:textSize="@dimen/m" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
