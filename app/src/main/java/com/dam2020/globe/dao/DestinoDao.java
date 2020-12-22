@@ -24,6 +24,14 @@ public interface DestinoDao {
     @Query("select * from destino where nombre like :nombre")
     List<Destino> findByNombre(String nombre);
 
+    @Query("select * from destino where nombre like :nombre AND " +
+            "internet=:internet AND " +
+            "precio_dia BETWEEN 0 AND :precio AND " +
+            "tipo like :tipo AND " +
+            "capacidad=:personas")
+    List<Destino> findByAll(String nombre, Integer internet, Double precio, Integer personas, String tipo);
+
+
     @Query("select * from destino where precio_dia between :min and :max")
     List<Destino> findByPrecio(Double min, Double max);
 

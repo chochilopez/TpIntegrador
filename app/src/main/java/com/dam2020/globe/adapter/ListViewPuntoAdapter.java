@@ -58,8 +58,8 @@ public class ListViewPuntoAdapter extends ArrayAdapter<Punto> {
         Button btnListaPunto;
 
         public  PuntoHolder(View v){
-            tvPunto=v.findViewById(R.id.tvPunto);
-            btnListaPunto=v.findViewById(R.id.btnListaPunto);
+            tvPunto=v.findViewById(R.id.tvDestino);
+            btnListaPunto=v.findViewById(R.id.btnIrDestino);
         }
     }
 }

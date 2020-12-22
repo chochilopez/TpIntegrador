@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipos_alojamientos">
+        <item>Cualquiera</item>
+        <item>Hotel</item>
+        <item>Casa</item>
+        <item>Departamento</item>
+        <item>Hostel</item>
+        <item>Cabaña</item>
+        <item>No Informa</item>
+    </string-array>
+</resources>
+
+    <!--HABITACION_HOTEL,CASA,DEPARTAMENTO,HOSTEL, CABAÑA, NO_INFORMA-->

@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDestino"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margenL"
+            android:layout_weight="1"
+            android:fontFamily="@font/ubuntu"
+            android:text="Punto"
+            android:textColor="@color/tres"
+            android:textSize="@dimen/l" />
+
+        <Button
+            android:id="@+id/btnIrDestino"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="@dimen/margenL"
+            android:textSize="@dimen/m"
+            android:background="@drawable/btn_rojo_rounded"
+            android:text="Ir" />
+
+    </LinearLayout>
+</LinearLayout>

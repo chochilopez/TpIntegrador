@@ -40,57 +40,14 @@ public class DatabaseInitializer {
 
         //String nombre, String descripcion, Double precioDia, Boolean poseeInternet, TipoAlojamiento tipoPropiedad, Integer capacidadPersonas, Punto punto
         //HABITACION_HOTEL,CASA,DEPARTAMENTO,HOSTEL, CABAÑA, NO_INFORMA
-        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-                TipoAlojamiento.CABAÑA.toString(), 6,addPunto(db, new Punto(-32.087373, -64.797747, "Calamuchita"))));
-        addDestino(db, new Destino("Hotel Champaqui", "Un hotel 5 estrellas arriba del cerro" , 10567.65, true,
-                TipoAlojamiento.HABITACION_HOTEL.toString(), 3, addPunto(db, new Punto(-31.989878, -64.9345763, "Calamuchita"))));
-        addDestino(db, new Destino("La casa de Vazquez", "La casa del jefe del faro" , 543.00, true,
-                TipoAlojamiento.CASA.toString(), 6, addPunto(db, new Punto(-54.732778, -63.857830, "Isla de los Estados"))));
-        addDestino(db, new Destino("El Vigilante", "Un edificio en un lugar raro" , 0.15, true,
-                TipoAlojamiento.DEPARTAMENTO.toString(), 6, addPunto(db, new Punto(-54.772796, -63.64296270, "Isla de los Estados"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-//        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, false,
-//                TipoAlojamiento.CABAÑA, 6, addPunto(db, new Punto(-32.078964, -64.796011, "Calamuchita"))));
-
+        addDestino(db, new Destino("Las Marias", "Cabañas de madera con pileta" , 2570.65, 0,
+                TipoAlojamiento.CABAÑA.toString(), 6,addPunto(db, new Punto(-32.087373, -64.797747, "Calamuchita")), 8));
+        addDestino(db, new Destino("Hotel Champaqui", "Un hotel 5 estrellas arriba del cerro" , 10567.65, 1,
+                TipoAlojamiento.HABITACION_HOTEL.toString(), 3, addPunto(db, new Punto(-31.989878, -64.9345763, "Calamuchita")), 2));
+        addDestino(db, new Destino("La casa de Vazquez", "La casa del jefe del faro" , 543.00, 1,
+                TipoAlojamiento.CASA.toString(), 6, addPunto(db, new Punto(-54.732778, -63.857830, "Isla de los Estados")), 3));
+        addDestino(db, new Destino("El Vigilante", "Un edificio en un lugar raro" , 0.15, 0,
+                TipoAlojamiento.DEPARTAMENTO.toString(), 6, addPunto(db, new Punto(-54.772796, -63.64296270, "Isla de los Estados")), 9));
 
         List<Destino> destinoList=db.destinoDao().getAll();
     }

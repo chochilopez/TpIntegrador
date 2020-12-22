@@ -8,17 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="rojo">#e63946</color>
-    <color name="blanco">#f1faee</color>
-    <color name="terciario">#a8dadc</color>
-    <color name="secundario">#457b9d</color>
-    <color name="primario">#1d3557</color>
-
-    <!--Colores sobre destino-->
-    <color name="destino__blamco">#DCDCDD</color>
-    <color name="destino_gris">#C5C3C6</color>
-    <color name="destino_terciario">#46494C</color>
-    <color name="destino_secundario">#4C5C68</color>
-    <color name="destino_primario">#1985A1</color>
+    <color name="cinco">#e63946</color>
+    <color name="cuatro">#f1faee</color>
+    <color name="tres">#a8dadc</color>
+    <color name="dos">#457b9d</color>
+    <color name="uno">#1d3557</color>
 
 </resources>

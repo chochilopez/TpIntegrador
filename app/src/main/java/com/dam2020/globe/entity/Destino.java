@@ -19,8 +19,11 @@ public class  Destino{
     @ColumnInfo(name = "precio_dia", defaultValue = "0.0")
     private Double precioDia;
 
-    @ColumnInfo(name="internet", defaultValue = "false")
-    private Boolean poseeInternet;
+    @ColumnInfo(defaultValue = "5")
+    private Integer popularidad;
+
+    @ColumnInfo(defaultValue = "0")
+    private Integer internet;
 
     @ColumnInfo(name="tipo", defaultValue = "NO_INFORMA")
     private String tipoPropiedad;
@@ -33,14 +36,15 @@ public class  Destino{
     public Destino() {
     }
 
-    public Destino(String nombre, String descripcion, Double precioDia, Boolean poseeInternet, String tipoPropiedad, Integer capacidadPersonas, Long id_punto) {
+    public Destino(String nombre, String descripcion, Double precioDia, Integer poseeInternet, String tipoPropiedad, Integer capacidadPersonas, Long id_punto, Integer popularidad) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precioDia = precioDia;
-        this.poseeInternet = poseeInternet;
+        this.internet = poseeInternet;
         this.tipoPropiedad = tipoPropiedad;
         this.capacidadPersonas = capacidadPersonas;
         this.id_punto = id_punto;
+        this.popularidad=popularidad;
     }
 
     public Long getId_destino() {
@@ -49,6 +53,14 @@ public class  Destino{
 
     public void setId_destino(Long id_destino) {
         this.id_destino = id_destino;
+    }
+
+    public Integer getPopularidad() {
+        return popularidad;
+    }
+
+    public void setPopularidad(Integer popularidad) {
+        this.popularidad = popularidad;
     }
 
     public String getNombre() {
@@ -75,12 +87,12 @@ public class  Destino{
         this.precioDia = precioDia;
     }
 
-    public Boolean getPoseeInternet() {
-        return poseeInternet;
+    public Integer getInternet() {
+        return internet;
     }
 
-    public void setPoseeInternet(Boolean poseeInternet) {
-        this.poseeInternet = poseeInternet;
+    public void setInternet(Integer internet) {
+        this.internet = internet;
     }
 
     public String getTipoPropiedad() {
@@ -114,7 +126,7 @@ public class  Destino{
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", precioDia=" + precioDia +
-                ", poseeInternet=" + poseeInternet +
+                ", poseeInternet=" + internet +
                 ", tipoPropiedad='" + tipoPropiedad + '\'' +
                 ", capacidadPersonas=" + capacidadPersonas +
                 ", id_punto=" + id_punto +
