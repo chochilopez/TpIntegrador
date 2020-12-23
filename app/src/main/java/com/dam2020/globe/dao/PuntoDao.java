@@ -16,6 +16,9 @@ public interface PuntoDao {
     @Query("select * from Punto")
     List<Punto> getAll();
 
+    @Query("select * from Punto p where id_pais=:id")
+    List<Punto> findByPais(Long id);
+
     @Insert
     void insertAll(Punto... puntos);
 

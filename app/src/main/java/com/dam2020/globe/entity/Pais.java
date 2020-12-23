@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity(tableName = "pais")
 public class Pais {
 
@@ -55,5 +57,20 @@ public class Pais {
                 ", codigo='" + codigo + '\'' +
                 ", nombre='" + nombre + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pais pais = (Pais) o;
+        return Objects.equals(id_pais, pais.id_pais) &&
+                Objects.equals(codigo, pais.codigo) &&
+                Objects.equals(nombre, pais.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id_pais, codigo, nombre);
     }
 }

@@ -5,6 +5,8 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity(tableName = "punto", indices = {@Index(value = {"latitud", "longitud"})})
 public class Punto {
 
@@ -67,5 +69,21 @@ public class Punto {
                 ", latitud=" + latitud +
                 ", longitud=" + longitud +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Punto punto = (Punto) o;
+        return Objects.equals(id_punto, punto.id_punto) &&
+                Objects.equals(latitud, punto.latitud) &&
+                Objects.equals(longitud, punto.longitud) &&
+                Objects.equals(id_pais, punto.id_pais);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id_punto, latitud, longitud, id_pais);
     }
 }

@@ -18,6 +18,10 @@ public interface PaisDao {
     @Query("SELECT * FROM Pais")
     List<PaisPunto> getPaisPuntos();
 
+    @Transaction
+    @Query("SELECT * FROM Pais p where p.nombre like :nombre")
+    List<PaisPunto> findByPais(String nombre);
+
     @Query("select * from Pais")
     List<Pais> getAll();
 
@@ -38,4 +42,6 @@ public interface PaisDao {
 
     @Delete
     void delete(Pais pais);
+
+
 }

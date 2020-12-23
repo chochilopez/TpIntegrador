@@ -11,33 +11,39 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/margenM"
+        android:background="@drawable/edit_rounded"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/editBuscar"
-            style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="@dimen/margenL"
-            android:layout_marginTop="@dimen/margenXl"
-            android:layout_marginEnd="@dimen/margenL"
-            android:background="@drawable/edit_rounded"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:fontFamily="@font/ubuntu_italic"
             android:gravity="center"
             android:hint="¿Que pais queres visitar?"
-            android:includeFontPadding="false"
-            android:shadowRadius="100"
+            android:paddingTop="@dimen/m"
+            android:paddingBottom="@dimen/m"
             android:singleLine="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/xl"
-            android:textStyle="bold" />
+            android:textColor="@color/tres"
+            android:textSize="@dimen/xl" />
+
+        <ImageView
+            android:id="@+id/imgBuscar"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/m"
+            android:paddingBottom="@dimen/m"
+            app:srcCompat="@drawable/search" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margenM"
         android:orientation="horizontal">
 
         <Button
@@ -48,8 +54,8 @@
             android:layout_weight="1"
             android:background="@drawable/btn_rounded"
             android:fontFamily="@font/ubuntu"
+            android:text="Ver Destinos"
             android:textColor="@color/uno"
-            android:text="Buscar Destino"
             android:textSize="@dimen/m" />
 
         <Button
@@ -60,23 +66,23 @@
             android:layout_weight="1"
             android:background="@drawable/btn_rounded"
             android:fontFamily="@font/ubuntu"
-            android:textColor="@color/uno"
             android:text="Ver Mapa"
+            android:textColor="@color/uno"
             android:textSize="@dimen/m" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvPuntos"
+        android:id="@+id/tvTextoLv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/l"
         android:layout_marginBottom="@dimen/m"
         android:fontFamily="@font/ubuntu_italic"
-        android:text="Los destinos mas elegidos:"
+        android:text="Los 3 destinos mas elegidos:"
         android:textColor="@color/tres" />
 
     <ListView
-        android:id="@+id/lvPuntos"
+        android:id="@+id/lvMain"
         android:layout_width="match_parent"
         android:layout_height="198dp"
         android:divider="@android:color/transparent"

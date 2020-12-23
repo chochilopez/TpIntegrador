@@ -29,6 +29,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
     private GoogleMap map;
     private Spinner comboTipoMapa;
+    private CameraPosition camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,30 +38,40 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Bundle parametros = this.getIntent().getExtras();
+        if(parametros !=null){
+            LatLng destino=new LatLng(parametros.getDouble("latitud"), parametros.getDouble("longitud"));
+            camera=new CameraPosition.Builder().target(destino).bearing(0).tilt(10).zoom(8).build();
+        }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Boolean granted=false;
-        if (ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
-            granted=true;
-        else {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 2);
-            granted=true;
-        }
-        if (granted){
+//        Boolean granted=false;
+//        if (ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
+//                ContextCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+//            granted=true;
+//        else {
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 2);
+//            granted=true;
+//        }
+//        if (granted){
             map = googleMap;
-            //FIXME soluicionar permisos
+            //FIXME solucionar permisos ¿Los necesesito?
             //map.setMyLocationEnabled(true);
             LatLng utn=new LatLng(-31.616470, -60.675239);
-            CameraPosition cp=new CameraPosition.Builder().target(utn).bearing(0).tilt(10).zoom(5).build();
+
             map.addMarker(new MarkerOptions().position(utn).title("Mi casa"));
-            map.animateCamera(CameraUpdateFactory.newCameraPosition(cp), 5000, null);
+
             map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             map.getUiSettings().setZoomControlsEnabled(true);
             map.getUiSettings().setMyLocationButtonEnabled(true);
             map.getUiSettings().setCompassEnabled(true);
+
+            if (camera==null)
+                camera=new CameraPosition.Builder().target(utn).bearing(0).tilt(10).zoom(5).build();
+            map.animateCamera(CameraUpdateFactory.newCameraPosition(camera), 5000, null);
 
             List<DestinoPunto> destinos=AppDatabase.getAppDatabase(this).destinoDao().getDestinosPuntos();
             for (DestinoPunto destino : destinos){
@@ -96,7 +107,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
                 }
             });
-        } else
-            finish();
+//        } else
+//            finish();
     }
 }

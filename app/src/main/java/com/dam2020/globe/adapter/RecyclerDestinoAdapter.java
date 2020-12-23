@@ -1,5 +1,6 @@
 package com.dam2020.globe.adapter;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -14,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -21,7 +23,12 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam2020.globe.R;
+import com.dam2020.globe.activity.DestinoActivity;
+import com.dam2020.globe.activity.MapActivity;
 import com.dam2020.globe.entity.Destino;
+import com.dam2020.globe.entity.DestinoPunto;
+import com.dam2020.globe.entity.Pais;
+import com.dam2020.globe.singleton.AppDatabase;
 
 import java.util.List;
 
@@ -51,15 +58,28 @@ public class RecyclerDestinoAdapter extends RecyclerView.Adapter<RecyclerDestino
             btnVerEnMapa=v.findViewById(R.id.btnVerEnMapa);
             btnReservar=v.findViewById(R.id.btnReservar);
 
+
             btnVerEnMapa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Integer pos = (Integer)v.getTag();
+                    Destino aux = mDataset.get(pos);
+                    Intent intent=new Intent(btnVerEnMapa.getContext() , MapActivity.class);
+                    DestinoPunto punto= AppDatabase.getAppDatabase(btnVerEnMapa.getContext()).destinoDao().getDestinoPunto(aux.getId_destino());
+                    intent.putExtra("latitud", punto.getPunto().getLatitud());
+                    intent.putExtra("longitud", punto.getPunto().getLongitud());
+                    activity.startActivity(intent);
                 }
             });;
 
             btnReservar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Integer pos = (Integer)v.getTag();
+                    Destino aux = mDataset.get(pos);
+                    aux.setReservas(aux.getReservas()+1);
+                    AppDatabase.getAppDatabase(btnVerEnMapa.getContext()).destinoDao().update(aux);
+                    Toast.makeText(btnReservar.getContext(),"Reservaste exitosamente "+aux.getNombre(), Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -72,6 +92,9 @@ public class RecyclerDestinoAdapter extends RecyclerView.Adapter<RecyclerDestino
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fila_destinos_recycler, parent, false);
         DestinoViewHolder  vh = new DestinoViewHolder(v);
+
+
+
         return vh;
     }
 
@@ -96,6 +119,8 @@ public class RecyclerDestinoAdapter extends RecyclerView.Adapter<RecyclerDestino
             destinoHolder.pbPrecio.getProgressDrawable().setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_IN);
         else if (destino.getPrecioDia() > 14000.01)
             destinoHolder.pbPrecio.getProgressDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+
+
 
 //        float auxCalificacion = disco.getCalificacion()==null? 0.0F : disco.getCalificacion().floatValue();
 //        discoHolder.rbCalificacion.setRating(auxCalificacion);

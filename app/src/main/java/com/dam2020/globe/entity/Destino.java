@@ -5,6 +5,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity(tableName = "destino")
 public class  Destino{
 
@@ -132,5 +134,26 @@ public class  Destino{
                 ", capacidadPersonas=" + capacidadPersonas +
                 ", id_punto=" + id_punto +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Destino destino = (Destino) o;
+        return Objects.equals(id_destino, destino.id_destino) &&
+                Objects.equals(nombre, destino.nombre) &&
+                Objects.equals(descripcion, destino.descripcion) &&
+                Objects.equals(precioDia, destino.precioDia) &&
+                Objects.equals(internet, destino.internet) &&
+                Objects.equals(tipoPropiedad, destino.tipoPropiedad) &&
+                Objects.equals(capacidadPersonas, destino.capacidadPersonas) &&
+                Objects.equals(reservas, destino.reservas) &&
+                Objects.equals(id_punto, destino.id_punto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id_destino, nombre, descripcion, precioDia, internet, tipoPropiedad, capacidadPersonas, reservas, id_punto);
     }
 }

@@ -5,24 +5,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dam2020.globe.R;
-import com.dam2020.globe.adapter.ListViewPuntoAdapter;
+import com.dam2020.globe.adapter.ListViewDestinoAdapter;
+import com.dam2020.globe.adapter.ListViewPaisAdapter;
 import com.dam2020.globe.entity.Destino;
-import com.dam2020.globe.entity.Punto;
-import com.dam2020.globe.helper.DatabaseInitializer;
+import com.dam2020.globe.entity.Pais;
 import com.dam2020.globe.singleton.AppDatabase;
 
-import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btnMapa, btnBuscarDestino;
-    ListView lvPuntos;
+    ImageView imgBuscar;
+    ListView lvMain;
+    EditText editBuscar;
+    TextView tvTextoLv;
     private final static Integer CODIGO_MAPA=999, CODIGO_DESTINO=888;
 
     @Override
@@ -30,21 +35,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lvPuntos=findViewById(R.id.lvPuntos);
+        lvMain=findViewById(R.id.lvMain);
         btnMapa=findViewById(R.id.btnMapa);
         btnBuscarDestino=findViewById(R.id.btnBuscarDestino);
+        editBuscar=findViewById(R.id.editBuscar);
+        tvTextoLv=findViewById(R.id.tvTextoLv);
+        imgBuscar=findViewById(R.id.imgBuscar);
         //DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(MainActivity.super.getApplicationContext()));
 
-        List<Destino>=AppDatabase.getAppDatabase(this).puntoDao().getAll();
-        Collections.sort(personas, new Comparator() {
-            @Override
-            public int compare(Persona p1, Persona p2) {
-                return new Integer(p1.getEdad()).compareTo(new Integer(p2.getEdad()));
-            }
-        });
-
-        ArrayAdapter<Punto> adapter= new ListViewPuntoAdapter(this, ,this);
-        lvPuntos.setAdapter(adapter);
+        ArrayAdapter<Destino> adapterDestino= new ListViewDestinoAdapter(this,AppDatabase.getAppDatabase(this).destinoDao().getTopReservas(),this);
+        lvMain.setAdapter(adapterDestino);
 
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,5 +61,32 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, CODIGO_DESTINO);
             }
         });
+
+        imgBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayAdapter<Pais> adapterPais= new ListViewPaisAdapter(MainActivity.this, AppDatabase.getAppDatabase(MainActivity.this).paisDao().findByNombre("%"+editBuscar.getText().toString()+"%"),MainActivity.this);
+                lvMain.setAdapter(adapterPais);
+                tvTextoLv.setText("Paises con destinos:");
+            }
+        });
     }
+
+    //TODO guardar parametros
+//    @Override
+//    protected void onSaveInstanceState(@NonNull Bundle outState) {
+//        Log.d("EJECUCION", "SAVE INSTANCE STATE");
+//        super.onSaveInstanceState(outState);
+//        outState.putString("pelicula",tvPelicula.getText().toString());
+//        outState.putString("episodio",tvEpisodio.getText().toString());
+//    }
+//
+//    @Override
+//    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+//        Log.d("EJECUCION", "RESTEORE INSTANCE STATE");
+//        super.onRestoreInstanceState(savedInstanceState);
+//        tvEpisodio.setText(savedInstanceState.getString("episodio"));
+//        tvPelicula.setText(savedInstanceState.getString("pelicula"));
+//        caratula(tvEpisodio.getText().toString());
+//    }
 }

@@ -15,20 +15,30 @@ import java.util.List;
 @Dao
 public interface DestinoDao {
     @Transaction
+    @Query("SELECT * FROM Destino d where d.id_destino=:id")
+    public DestinoPunto getDestinoPunto(Long id);
+
+    @Transaction
     @Query("SELECT * FROM Destino")
     public List<DestinoPunto> getDestinosPuntos();
 
     @Query("select * from Destino")
     List<Destino> getAll();
 
+    @Query("select * from Destino d order by d.reservas desc limit 3")
+    List<Destino> getTopReservas();
+
     @Query("select * from Destino d where d.nombre like :nombre")
     List<Destino> findByNombre(String nombre);
+
+    @Query("select * from Destino d where d.id_punto=:id")
+    Destino findByPuntoId(Long id);
 
     @Query("select * from Destino d where d.nombre like :nombre AND " +
             "d.internet=:internet AND " +
             "d.precio_dia BETWEEN 0 AND :precio AND " +
             "d.tipo like :tipo AND " +
-            "d.capacidad BETWEEN 1 AND :personas ")
+            "d.capacidad >= :personas ")
     List<Destino> findByAll(String nombre, Integer internet, Double precio, Integer personas, String tipo);
 
     @Query("select * from Destino d where d.precio_dia between :min and :max")

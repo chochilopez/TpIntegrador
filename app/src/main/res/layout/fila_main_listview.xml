@@ -10,11 +10,12 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvDestino"
+            android:id="@+id/tvNombreMain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="@dimen/margenL"
+            android:layout_marginStart="@dimen/m"
+            android:layout_marginTop="@dimen/xs"
             android:layout_weight="1"
             android:fontFamily="@font/ubuntu"
             android:text="Punto"
@@ -22,10 +23,11 @@
             android:textSize="@dimen/l" />
 
         <Button
-            android:id="@+id/btnIrDestino"
+            android:id="@+id/btnIrMain"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginEnd="@dimen/margenL"
+            android:layout_marginEnd="@dimen/m"
+            android:layout_marginTop="@dimen/xs"
             android:textSize="@dimen/m"
             android:background="@drawable/btn_rojo_rounded"
             android:text="Ir" />

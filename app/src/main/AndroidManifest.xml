@@ -25,9 +25,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
         <activity android:name=".activity.DestinoActivity"/>
-        <activity android:name=".activity.FormDestinoActivity"/>
-        <activity android:name=".activity.FormPuntoActivity"/>
-        <activity android:name=".activity.PuntoActivity"/>
         <activity android:name=".activity.MapActivity"/>
         <activity android:name=".activity.MainActivity">
             <intent-filter>

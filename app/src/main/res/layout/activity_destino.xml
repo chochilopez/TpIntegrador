@@ -201,35 +201,17 @@
             android:textColor="@color/cuatro" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnAgregarDestino"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginStart="@dimen/l"
-            android:layout_weight="1"
-            android:background="@drawable/btn_azul_rounded"
-            android:text="Agregar destino"
-            android:textColor="@color/cuatro" />
-
-        <Button
-            android:id="@+id/btnBuscar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginStart="@dimen/l"
-            android:layout_marginEnd="@dimen/l"
-            android:layout_weight="1"
-            android:background="@drawable/btn_rojo_rounded"
-            android:text="Buscar destino"
-            android:textColor="@color/cuatro" />
-
-    </LinearLayout>
+        android:layout_gravity="right"
+        android:layout_marginStart="@dimen/l"
+        android:layout_marginEnd="@dimen/l"
+        android:background="@drawable/btn_rojo_rounded"
+        android:padding="@dimen/l"
+        android:text="Buscar destino"
+        android:textColor="@color/cuatro" />
 
     <TextView
         android:id="@+id/tvResultados"
