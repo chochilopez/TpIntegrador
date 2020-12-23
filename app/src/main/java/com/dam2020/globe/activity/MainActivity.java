@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         editBuscar=findViewById(R.id.editBuscar);
         tvTextoLv=findViewById(R.id.tvTextoLv);
         imgBuscar=findViewById(R.id.imgBuscar);
+
+        //TODO DESCOMENTAR PARA PROBLAR
         //DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(MainActivity.super.getApplicationContext()));
 
         ArrayAdapter<Destino> adapterDestino= new ListViewDestinoAdapter(this,AppDatabase.getAppDatabase(this).destinoDao().getTopReservas(),this);
